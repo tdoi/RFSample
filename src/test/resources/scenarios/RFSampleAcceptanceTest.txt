@@ -1,1 +1,36 @@
+*** Settings ***
+Library           SeleniumLibrary
+
+*** Variables ***
+${BROWSER}        googlechrome
+
 *** Test Cases ***
+Add Operation Works Well
+    [Setup]    Start Selenium Server
+    [Template]    Add Operation Workflow
+    1    1    2
+    100    200    300
+    XYZ    150    N/A
+    [Teardown]    Stop Selenium Server
+
+*** Keywords ***
+Add Operation Workflow
+    [Arguments]    ${arg1}    ${arg2}    ${expected}
+    Open Application Page
+    ${calc_value}=    Calculate In Application Page    ${arg1}    ${arg2}
+    Should Be Equal    ${calc_value}    ${expected}
+    Close Application Page
+
+Open Application Page
+    Open Browser    http://localhost:9080/RFSample/calculate    ${BROWSER}
+
+Calculate In Application Page
+    [Arguments]    ${arg1}    ${arg2}
+    Input Text    arg1    ${arg1}
+    Input Text    arg2    ${arg2}
+    Submit Form
+    ${result}=    Get Value    result
+    [Return]    ${result}
+
+Close Application Page
+    Close Browser
