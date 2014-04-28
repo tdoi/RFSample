@@ -13,9 +13,9 @@ public class CalculatorServlet extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setAttribute("arg1", "");
-        request.setAttribute("arg2", "");
-        request.setAttribute("result", "");
+        request.setAttribute("arg1", null);
+        request.setAttribute("arg2", null);
+        request.setAttribute("result", null);
         request.getRequestDispatcher("calculator.jsp").forward(request, response);
 	}
 
