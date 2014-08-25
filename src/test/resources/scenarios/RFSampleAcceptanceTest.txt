@@ -1,17 +1,15 @@
 *** Settings ***
-Library           SeleniumLibrary
+Library           Selenium2Library
 
 *** Variables ***
 ${BROWSER}        googlechrome
 
 *** Test Cases ***
 Add Operation Works Well
-    [Setup]    Start Selenium Server
     [Template]    Add Operation Workflow
     1    1    2
     100    200    300
     XYZ    150    N/A
-    [Teardown]    Stop Selenium Server
 
 *** Keywords ***
 Add Operation Workflow
