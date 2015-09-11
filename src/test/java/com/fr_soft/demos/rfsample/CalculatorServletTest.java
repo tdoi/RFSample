@@ -11,7 +11,7 @@ import org.springframework.mock.web.MockHttpServletRequest;
 import org.springframework.mock.web.MockHttpServletResponse;
 
 public class CalculatorServletTest {
-    
+
     private CalculatorServlet servlet = new CalculatorServlet();
     private MockHttpServletRequest request = new MockHttpServletRequest();
     private MockHttpServletResponse response = new MockHttpServletResponse();
@@ -24,12 +24,12 @@ public class CalculatorServletTest {
         assertNull(this.request.getAttribute("arg2"));
         assertNull(this.request.getAttribute("result"));
     }
-    
+
     @Test
     public void test_doPostReturnsErrorMessageIfArg1IsNotNumber() throws IOException, ServletException {
         this.request.addParameter("arg1", "XYZ");
         this.request.addParameter("arg2", "100");
- 
+
         this.servlet.doPost(this.request, this.response);
 
         assertEquals("XYZ", this.request.getAttribute("arg1"));
