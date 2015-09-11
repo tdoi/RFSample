@@ -2,7 +2,7 @@
 Library           Selenium2Library
 
 *** Variables ***
-${BROWSER}        googlechrome
+${BROWSER}        firefox
 
 *** Test Cases ***
 Add Operation Works Well
