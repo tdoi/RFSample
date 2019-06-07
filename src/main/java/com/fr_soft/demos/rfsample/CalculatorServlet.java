@@ -25,7 +25,7 @@ public class CalculatorServlet extends HttpServlet {
         request.setAttribute("arg1", arg1);
         String arg2 = request.getParameter("arg2");
         request.setAttribute("arg2", arg2);
-
+        
         try {
             Integer v1 = Integer.parseInt(arg1);
             Integer v2 = Integer.parseInt(arg2);
