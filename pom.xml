@@ -48,7 +48,7 @@
 		<dependency>
 			<groupId>org.robotframework</groupId>
 			<artifactId>robotframework</artifactId>
-			<version>3.1.2</version>
+			<version>4.1.2</version>
 		</dependency>
 
 		<dependency>
