@@ -9,13 +9,13 @@
 	<packaging>war</packaging>
 
 	<name>RFSample</name>
-	<url>http://maven.apache.org</url>
+	<url>https://maven.apache.org</url>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	    <maven.compiler.source>1.8</maven.compiler.source>
     	<maven.compiler.target>1.8</maven.compiler.target>
-		<junit.jupiter.version>5.4.2</junit.jupiter.version>
+		<junit.jupiter.version>5.9.2</junit.jupiter.version>
 	</properties>
 
 	<dependencies>
@@ -41,7 +41,7 @@
 		<dependency>
 			<groupId>org.junit.platform</groupId>
 			<artifactId>junit-platform-launcher</artifactId>
-			<version>1.4.1</version>
+			<version>1.9.2</version>
 			<scope>test</scope>
 		</dependency>
 
@@ -54,10 +54,10 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-test</artifactId>
-			<version>5.1.7.RELEASE</version>
+			<version>6.0.10</version>
 			<scope>test</scope>
 		</dependency>
-		
+
 	</dependencies>
 
 	<build>
@@ -77,13 +77,15 @@
 				<configuration>
 					<testCasesDirectory>${project.basedir}/src/test/resources/scenarios
 					</testCasesDirectory>
+					<libdoc/>
+					<testdoc/>
 				</configuration>
 			</plugin>
 
 			<plugin>
 				<groupId>org.eclipse.jetty</groupId>
 				<artifactId>jetty-maven-plugin</artifactId>
-				<version>9.4.18.v20190429</version>
+				<version>9.4.51.v20230217</version>
 				<configuration>
 					<connectors>
 						<connector
